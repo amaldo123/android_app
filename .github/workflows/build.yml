@@ -23,11 +23,12 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
       - name: Grant Execute Permission for Gradlew
-        run: chmod +x ./gradlew || true
+        run: chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon --stacktrace
@@ -48,4 +49,3 @@ jobs:
         with:
           name: app-release-bundle
           path: app/build/outputs/bundle/release/*.aab
-
