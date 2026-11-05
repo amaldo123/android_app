@@ -21,13 +21,17 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
+
+      - name: Set up Gradle CLI
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.2'
 
       - name: Accept Android SDK Licenses
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
-      - name: Setup & Repair Gradle Wrapper
+      - name: Locate Android Project & Generate Clean Wrapper
         id: prepare-gradle
         run: |
           echo "Locating build.gradle..."
@@ -47,30 +51,10 @@ jobs:
           echo "Project directory is: $PROJECT_DIR"
           echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
 
-          # Fix or replace gradlew if it contains XML or is invalid
-          GRADLEW_FILE="$PROJECT_DIR/gradlew"
-          if [ ! -f "$GRADLEW_FILE" ] || ! grep -q "GRADLE_APP_NAME" "$GRADLEW_FILE" 2>/dev/null; then
-            echo "Corrupted or missing gradlew detected! Downloading clean Gradle wrapper script..."
-            curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradlew -o "$GRADLEW_FILE"
-          fi
-          chmod +x "$GRADLEW_FILE"
-
-          # Ensure gradle/wrapper directory and jar exist
-          WRAPPER_DIR="$PROJECT_DIR/gradle/wrapper"
-          mkdir -p "$WRAPPER_DIR"
-          if [ ! -f "$WRAPPER_DIR/gradle-wrapper.jar" ]; then
-            echo "Downloading gradle-wrapper.jar..."
-            curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar -o "$WRAPPER_DIR/gradle-wrapper.jar"
-          fi
-
-          if [ ! -f "$WRAPPER_DIR/gradle-wrapper.properties" ]; then
-            echo "Creating default gradle-wrapper.properties..."
-            echo "distributionBase=GRADLE_USER_HOME" > "$WRAPPER_DIR/gradle-wrapper.properties"
-            echo "distributionPath=wrapper/dists" >> "$WRAPPER_DIR/gradle-wrapper.properties"
-            echo "distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip" >> "$WRAPPER_DIR/gradle-wrapper.properties"
-            echo "zipStoreBase=GRADLE_USER_HOME" >> "$WRAPPER_DIR/gradle-wrapper.properties"
-            echo "zipStorePath=wrapper/dists" >> "$WRAPPER_DIR/gradle-wrapper.properties"
-          fi
+          # Generate genuine, complete wrapper files using Gradle CLI
+          cd "$PROJECT_DIR"
+          gradle wrapper --gradle-version 8.2
+          chmod +x ./gradlew
 
       - name: Build Debug APK
         working-directory: ${{ steps.prepare-gradle.outputs.project_dir }}
