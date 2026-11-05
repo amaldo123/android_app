@@ -22,58 +22,41 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Clean Corrupted Wrapper Files
+        run: |
+          echo "Removing invalid wrapper files..."
+          find . -name "gradle-wrapper.jar" -delete || true
+          find . -name "gradlew" -delete || true
+          find . -name "gradlew.bat" -delete || true
+
       - name: Set up Gradle 9.6.0
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '9.6.0'
+          validate-wrappers: false
 
       - name: Accept Android SDK Licenses
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
-      - name: Locate Android Project & Repair Wrapper
-        id: prepare-gradle
-        run: |
-          echo "Locating build.gradle..."
-          BUILD_FILE=$(find . -name "build.gradle" -not -path "*/.*" -not -path "*/app/*" | head -n 1)
-
-          if [ -z "$BUILD_FILE" ]; then
-            BUILD_FILE=$(find . -name "build.gradle" -not -path "*/.*" | head -n 1)
-          fi
-
-          if [ -z "$BUILD_FILE" ]; then
-            echo "::error::No build.gradle found in repository!"
-            find . -maxdepth 3
-            exit 1
-          fi
-
-          PROJECT_DIR=$(dirname "$BUILD_FILE")
-          echo "Project directory is: $PROJECT_DIR"
-          echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
-
-          cd "$PROJECT_DIR"
-          # Overwrite corrupted wrapper files with genuine Gradle 9.6.0 wrapper
-          gradle wrapper --gradle-version 9.6.0
-          chmod +x ./gradlew
-
       - name: Build Debug APK
-        working-directory: ${{ steps.prepare-gradle.outputs.project_dir }}
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Build Release Bundle (.aab)
-        working-directory: ${{ steps.prepare-gradle.outputs.project_dir }}
-        run: ./gradlew bundleRelease --no-daemon --stacktrace
+        working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
+        run: gradle bundleRelease --no-daemon --stacktrace
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
-        if: always()
+        if: success()
         with:
           name: app-debug-apk
-          path: ${{ steps.prepare-gradle.outputs.project_dir }}/**/build/outputs/apk/debug/*.apk
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/apk/debug/*.apk
 
       - name: Upload Release Bundle (.aab)
         uses: actions/upload-artifact@v4
-        if: always()
+        if: success()
         with:
           name: app-release-bundle
-          path: ${{ steps.prepare-gradle.outputs.project_dir }}/**/build/outputs/bundle/release/*.aab
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/bundle/release/*.aab
