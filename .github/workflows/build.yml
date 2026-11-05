@@ -22,16 +22,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Gradle CLI
-        uses: gradle/actions/setup-gradle@v3
+      - name: Set up Gradle 9.6.0
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.2'
+          gradle-version: '9.6.0'
 
       - name: Accept Android SDK Licenses
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
-      - name: Locate Android Project & Generate Clean Wrapper
+      - name: Locate Android Project & Repair Wrapper
         id: prepare-gradle
         run: |
           echo "Locating build.gradle..."
@@ -51,9 +51,9 @@ jobs:
           echo "Project directory is: $PROJECT_DIR"
           echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
 
-          # Generate genuine, complete wrapper files using Gradle CLI
           cd "$PROJECT_DIR"
-          gradle wrapper --gradle-version 8.2
+          # Overwrite corrupted wrapper files with genuine Gradle 9.6.0 wrapper
+          gradle wrapper --gradle-version 9.6.0
           chmod +x ./gradlew
 
       - name: Build Debug APK
