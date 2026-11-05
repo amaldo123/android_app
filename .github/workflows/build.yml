@@ -27,13 +27,34 @@ jobs:
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
-      - name: Grant Execute Permission for Gradlew
-        run: chmod +x ./gradlew
+      - name: Locate Android Project & Gradlew
+        id: find-project
+        run: |
+          echo "Listing repository structure:"
+          ls -la
+
+          GRADLEW_PATH=$(find . -name "gradlew" -not -path "*/.*" | head -n 1)
+
+          if [ -z "$GRADLEW_PATH" ]; then
+            echo "::error::'gradlew' was not found anywhere in the repository!"
+            echo "Current files in repository:"
+            find . -maxdepth 3
+            exit 1
+          fi
+
+          PROJECT_DIR=$(dirname "$GRADLEW_PATH")
+          echo "Found gradlew at: $GRADLEW_PATH"
+          echo "Project directory is: $PROJECT_DIR"
+
+          chmod +x "$GRADLEW_PATH"
+          echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
 
       - name: Build Debug APK
+        working-directory: ${{ steps.find-project.outputs.project_dir }}
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Build Release Bundle (.aab)
+        working-directory: ${{ steps.find-project.outputs.project_dir }}
         run: ./gradlew bundleRelease --no-daemon --stacktrace
 
       - name: Upload Debug APK
@@ -41,11 +62,11 @@ jobs:
         if: always()
         with:
           name: app-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: ${{ steps.find-project.outputs.project_dir }}/**/build/outputs/apk/debug/*.apk
 
       - name: Upload Release Bundle (.aab)
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: app-release-bundle
-          path: app/build/outputs/bundle/release/*.aab
+          path: ${{ steps.find-project.outputs.project_dir }}/**/build/outputs/bundle/release/*.aab
