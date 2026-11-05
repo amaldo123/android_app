@@ -65,13 +65,11 @@ jobs:
 
           if [ ! -f "$WRAPPER_DIR/gradle-wrapper.properties" ]; then
             echo "Creating default gradle-wrapper.properties..."
-            cat << 'EOF' > "$WRAPPER_DIR/gradle-wrapper.properties"
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-EOF
+            echo "distributionBase=GRADLE_USER_HOME" > "$WRAPPER_DIR/gradle-wrapper.properties"
+            echo "distributionPath=wrapper/dists" >> "$WRAPPER_DIR/gradle-wrapper.properties"
+            echo "distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip" >> "$WRAPPER_DIR/gradle-wrapper.properties"
+            echo "zipStoreBase=GRADLE_USER_HOME" >> "$WRAPPER_DIR/gradle-wrapper.properties"
+            echo "zipStorePath=wrapper/dists" >> "$WRAPPER_DIR/gradle-wrapper.properties"
           fi
 
       - name: Build Debug APK
