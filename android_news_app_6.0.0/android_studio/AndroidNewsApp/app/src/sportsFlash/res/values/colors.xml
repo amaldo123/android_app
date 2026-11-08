@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_light_primary">#D32F2F</color>
+    <color name="color_light_status_bar">#B71C1C</color>
+    <color name="color_light_accent">#FF5252</color>
+    <color name="color_category">#FF5252</color>
+    <color name="color_stroke_native_ad">#D32F2F</color>
+</resources>
+

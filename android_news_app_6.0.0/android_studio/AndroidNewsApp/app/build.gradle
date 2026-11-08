@@ -13,6 +13,39 @@ android {
         versionCode = 36
         versionName = "6.0.0"
     }
+    flavorDimensions = ["app"]
+    productFlavors {
+        techRadar {
+            dimension = "app"
+            applicationId = "com.amaldo.techradar"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
+        sportsFlash {
+            dimension = "app"
+            applicationId = "com.amaldo.sportsflash"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
+        marketPulse {
+            dimension = "app"
+            applicationId = "com.amaldo.marketpulse"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
+        horizonTravel {
+            dimension = "app"
+            applicationId = "com.amaldo.horizontravel"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
+        dailyDigest {
+            dimension = "app"
+            applicationId = "com.amaldo.dailydigest"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
+    }
     buildTypes {
         debug {
             minifyEnabled false

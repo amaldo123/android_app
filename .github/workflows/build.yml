@@ -21,31 +21,42 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Clean Corrupted Wrapper Files
+        run: |
+          echo "Removing invalid wrapper files..."
+          find . -name "gradle-wrapper.jar" -delete || true
+          find . -name "gradlew" -delete || true
+          find . -name "gradlew.bat" -delete || true
 
-      - name: Grant Execute Permission for Gradlew
-        run: chmod +x ./gradlew || true
+      - name: Set up Gradle 9.6.0
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.6.0'
+          validate-wrappers: false
+
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Build Release Bundle (.aab)
-        run: ./gradlew bundleRelease --no-daemon --stacktrace
+        working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
+        run: gradle bundleRelease --no-daemon --stacktrace
 
-      - name: Upload Debug APK
+      - name: Upload Debug APKs (All 5 Apps)
         uses: actions/upload-artifact@v4
-        if: always()
+        if: success()
         with:
-          name: app-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: all-5-apps-debug-apks
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/apk/**/*.apk
 
-      - name: Upload Release Bundle (.aab)
+      - name: Upload Release Bundles (All 5 Apps)
         uses: actions/upload-artifact@v4
-        if: always()
+        if: success()
         with:
-          name: app-release-bundle
-          path: app/build/outputs/bundle/release/*.aab
-
+          name: all-5-apps-release-bundles
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/bundle/**/*.aab

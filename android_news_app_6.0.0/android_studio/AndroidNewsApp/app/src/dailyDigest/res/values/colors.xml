@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_light_primary">#263238</color>
+    <color name="color_light_status_bar">#1A2327</color>
+    <color name="color_light_accent">#FFAB00</color>
+    <color name="color_category">#FFAB00</color>
+    <color name="color_stroke_native_ad">#263238</color>
+</resources>
+
