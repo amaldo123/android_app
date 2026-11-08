@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Orbiting Nebula Crescent Trail -->
+    <path
+        android:strokeColor="#FF7AB0"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M 26,38 C 30,22 74,18 84,34 C 88,40 82,48 76,50" />
+
+    <!-- Open Knowledge Book Pages -->
+    <path
+        android:fillColor="#C9BFF5"
+        android:pathData="M 54,74 C 44,66 32,68 22,72 L 22,54 C 32,50 44,48 54,56 Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54,74 C 64,66 76,68 86,72 L 86,54 C 76,50 64,48 54,56 Z" />
+
+    <path
+        android:strokeColor="#12082E"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M 54,56 L 54,74" />
+
+    <!-- Radiant 8-Point Cosmic Star -->
+    <path
+        android:fillColor="#FFD166"
+        android:pathData="M 54,16 L 58,30 L 72,34 L 58,38 L 54,52 L 50,38 L 36,34 L 50,30 Z" />
+
+    <!-- Diagonal Ray Sparkles -->
+    <path
+        android:strokeColor="#FFD166"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 44,24 L 48,28 M 64,24 L 60,28 M 44,44 L 48,40 M 64,44 L 60,40" />
+
+    <!-- Secondary Twinkling Starlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 82,24 L 83.5,27.5 L 87,29 L 83.5,30.5 L 82,34 L 80.5,30.5 L 77,29 L 80.5,27.5 Z" />
+
+    <path
+        android:fillColor="#FF7AB0"
+        android:pathData="M 26,46 L 27.2,49 L 30,50.2 L 27.2,51.4 L 26,54 L 24.8,51.4 L 22,50.2 L 24.8,49 Z" />
+
+</vector>
+

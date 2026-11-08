@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_light_primary">#263238</color>
-    <color name="color_light_status_bar">#1A2327</color>
-    <color name="color_light_accent">#FFAB00</color>
-    <color name="color_category">#FFAB00</color>
-    <color name="color_stroke_native_ad">#263238</color>
-</resources>
+    <!-- Style 5: Cosmic Soft (dailyDigest) -->
+    <!-- Light/Standard theme tokens -->
+    <color name="color_light_primary">#FFD166</color>
+    <color name="color_light_status_bar">#12082E</color>
+    <color name="color_light_accent">#FFD166</color>
+    <color name="color_light_background">#12082E</color>
+    <color name="color_light_bottom_navigation">#12082E</color>
+    <color name="color_light_icon">#C9BFF5</color>
+    <color name="color_light_text">#FFFFFF</color>
+    <color name="color_light_search_bar">#17FFFFFF</color>
+    <color name="color_light_native_ad_background">#17FFFFFF</color>
+    <color name="color_light_active_indicator">#FFD166</color>
 
+    <!-- Dark theme tokens -->
+    <color name="color_dark_status_bar">#12082E</color>
+    <color name="color_dark_toolbar">#12082E</color>
+    <color name="color_dark_accent">#FFD166</color>
+    <color name="color_dark_background">#12082E</color>
+    <color name="color_dark_bottom_navigation">#12082E</color>
+    <color name="color_dark_icon">#C9BFF5</color>
+    <color name="color_dark_text">#FFFFFF</color>
+    <color name="color_dark_search_bar">#17FFFFFF</color>
+    <color name="color_dark_native_ad_background">#17FFFFFF</color>
+    <color name="color_dark_active_indicator">#FFD166</color>
+
+    <!-- Accent and stroke -->
+    <color name="color_category">#FFD166</color>
+    <color name="color_stroke_native_ad">#38FFFFFF</color>
+    <color name="color_dialog_background_light">#12082E</color>
+    <color name="color_dialog_background_dark">#12082E</color>
+</resources>

@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_light_primary">#1B5E20</color>
-    <color name="color_light_status_bar">#0E3813</color>
-    <color name="color_light_accent">#00C853</color>
-    <color name="color_category">#00C853</color>
-    <color name="color_stroke_native_ad">#1B5E20</color>
-</resources>
+    <!-- Style 3: Sticker Brutal (marketPulse) -->
+    <!-- Light theme tokens -->
+    <color name="color_light_primary">#1A1A1A</color>
+    <color name="color_light_status_bar">#FFE45C</color>
+    <color name="color_light_accent">#C4150A</color>
+    <color name="color_light_background">#FFE45C</color>
+    <color name="color_light_bottom_navigation">#FFE45C</color>
+    <color name="color_light_icon">#1A1A1A</color>
+    <color name="color_light_text">#1A1A1A</color>
+    <color name="color_light_search_bar">#B3FFFFFF</color>
+    <color name="color_light_native_ad_background">#B3FFFFFF</color>
+    <color name="color_light_active_indicator">#1A1A1A</color>
 
+    <!-- Dark theme tokens -->
+    <color name="color_dark_status_bar">#1A1A1A</color>
+    <color name="color_dark_toolbar">#1A1A1A</color>
+    <color name="color_dark_accent">#FFE45C</color>
+    <color name="color_dark_background">#1A1A1A</color>
+    <color name="color_dark_bottom_navigation">#1A1A1A</color>
+    <color name="color_dark_icon">#FFE45C</color>
+    <color name="color_dark_text">#FFE45C</color>
+    <color name="color_dark_search_bar">#333333</color>
+    <color name="color_dark_native_ad_background">#333333</color>
+    <color name="color_dark_active_indicator">#FFE45C</color>
+
+    <!-- Accent and stroke -->
+    <color name="color_category">#C4150A</color>
+    <color name="color_stroke_native_ad">#1A1A1A</color>
+    <color name="color_dialog_background_light">#FFE45C</color>
+</resources>

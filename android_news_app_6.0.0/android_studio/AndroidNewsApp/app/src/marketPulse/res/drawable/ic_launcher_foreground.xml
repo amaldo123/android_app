@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Hard offset brutalist shadow -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M 57,25 A 32,32 0 1,1 56.9,25" />
+
+    <!-- Front stark white sticker disc -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="3.5"
+        android:pathData="M 53,21 A 32,32 0 1,1 52.9,21" />
+
+    <!-- Pulse baseline grid tick marks -->
+    <path
+        android:strokeColor="#4A4000"
+        android:strokeWidth="1.2"
+        android:pathData="M 30,53 L 76,53" />
+
+    <!-- Sharp Market Pulse Zigzag line -->
+    <path
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 28,53 L 39,53 L 45,39 L 52,67 L 59,35 L 67,53 L 77,53" />
+
+    <!-- Bullish Breakout Arrow -->
+    <path
+        android:strokeColor="#C4150A"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 59,35 L 75,21 M 63,21 L 75,21 L 75,33" />
+
+    <!-- Pulse Peak Accent Dot -->
+    <path
+        android:fillColor="#C4150A"
+        android:pathData="M 59,35 m -3,0 a 3,3 0 1,1 6,0 a 3,3 0 1,1 -6,0" />
+
+</vector>
+

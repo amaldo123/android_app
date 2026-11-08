@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style 2: Neon Newsroom design dimensions -->
+    <dimen name="rounded_corner_radius">24dp</dimen>
+    <dimen name="btn_corner_radius">30dp</dimen>
+    <dimen name="native_ad_stroke_width">1dp</dimen>
+    <dimen name="toolbar_elevation">0dp</dimen>
+</resources>
+

@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Compass Guide Star at Zenith -->
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M 54,18 L 57.5,27.5 L 67,31 L 57.5,34.5 L 54,44 L 50.5,34.5 L 41,31 L 50.5,27.5 Z" />
+
+    <!-- Rising Sun Rays -->
+    <path
+        android:strokeColor="#FB7185"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 38,42 L 32,36 M 54,36 L 54,44 M 70,42 L 76,36" />
+
+    <!-- Rising Coral Horizon Sun -->
+    <path
+        android:fillColor="#FB7185"
+        android:pathData="M 36,58 A 18,18 0 0,1 72,58 Z" />
+
+    <!-- Pure White Wave Highlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 22,60 C 32,54 42,66 54,58 C 66,50 76,62 86,56 L 86,64 C 76,68 66,56 54,64 C 42,72 32,60 22,66 Z" />
+
+    <!-- Primary Seafoam Ocean Wave -->
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M 20,64 C 32,56 42,68 54,60 C 66,52 76,64 88,58 L 88,76 C 76,82 66,70 54,78 C 42,86 32,74 20,80 Z" />
+
+    <!-- Deep Ocean Base Wave -->
+    <path
+        android:fillColor="#0A4BD6"
+        android:pathData="M 20,78 C 32,72 42,84 54,76 C 66,68 76,80 88,74 L 88,88 L 20,88 Z" />
+
+</vector>
+

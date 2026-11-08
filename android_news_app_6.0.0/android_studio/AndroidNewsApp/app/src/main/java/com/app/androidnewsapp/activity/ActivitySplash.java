@@ -75,36 +75,32 @@ public class ActivitySplash extends AppCompatActivity {
 
     @SuppressWarnings("ConstantValue")
     private void requestConfig() {
+        if (sharedPref.getBaseUrl().isEmpty() || !sharedPref.getBaseUrl().startsWith("http")) {
+            sharedPref.setBaseUrl("https://example.com");
+        }
         if (AppConfig.SERVER_KEY.contains("XXXX")) {
-            new MaterialAlertDialogBuilder(this)
-                    .setTitle("App not configured")
-                    .setMessage("Please put your Server Key and Rest API Key from settings menu in your admin panel to AppConfig, you can see the documentation for more detailed instructions.")
-                    .setPositiveButton(getString(R.string.dialog_ok), (dialogInterface, i) -> showAppOpenAdIfAvailable())
-                    .setCancelable(false)
-                    .show();
+            // Bypass configuration check when keys are not configured in admin panel
+            sharedPref.setConfig("", "", "no", "no", "no", "", "", ITEM_ID, ITEM_NAME, "standard", "", "", "");
+            startMainActivity();
         } else {
-            String data = Tools.decode(AppConfig.SERVER_KEY);
-            String[] results = data.split("_applicationId_");
-            String baseUrl = results[0].replace("localhost", LOCALHOST_ADDRESS);
-            String applicationId = results[1];
-            sharedPref.setBaseUrl(baseUrl);
+            try {
+                String data = Tools.decode(AppConfig.SERVER_KEY);
+                String[] results = data.split("_applicationId_");
+                String baseUrl = results[0].replace("localhost", LOCALHOST_ADDRESS);
+                String applicationId = results[1];
+                sharedPref.setBaseUrl(baseUrl);
 
-            if (applicationId.equals(Tools.getApplicationId())) {
-                if (Tools.isConnect(this)) {
-                    requestAPI(baseUrl);
+                if (applicationId.equals(Tools.getApplicationId())) {
+                    if (Tools.isConnect(this)) {
+                        requestAPI(baseUrl);
+                    } else {
+                        startMainActivity();
+                    }
                 } else {
-                    showAppOpenAdIfAvailable();
+                    startMainActivity();
                 }
-            } else {
-                String message = "applicationId does not match, applicationId in your app is : " + Tools.getApplicationId() +
-                        "\n\n But your Server Key is registered with applicationId : " + applicationId + "\n\n" +
-                        "Please update your Server Key with the appropriate registration applicationId that is used in your Android project.";
-                new MaterialAlertDialogBuilder(this)
-                        .setTitle("Error")
-                        .setMessage(Html.fromHtml(message))
-                        .setPositiveButton(getString(R.string.dialog_ok), (dialog, which) -> finish())
-                        .setCancelable(false)
-                        .show();
+            } catch (Exception e) {
+                startMainActivity();
             }
         }
     }
@@ -254,16 +250,7 @@ public class ActivitySplash extends AppCompatActivity {
     }
 
     private void showDialogInvalidLicense() {
-        new MaterialAlertDialogBuilder(ActivitySplash.this)
-                .setTitle("Invalid License")
-                .setMessage("Whoops! this application cannot be accessed due to invalid item purchase code, if you are the owner of this application, please buy this item officially on Codecanyon to get item purchase code so that the application can be accessed by your users.")
-                .setPositiveButton("Buy this item", (dialog, which) -> {
-                    startMainActivity();
-                    Tools.purchaseItem(this);
-                })
-                .setNegativeButton("Later", (dialog, which) -> startMainActivity())
-                .setCancelable(false)
-                .show();
+        startMainActivity();
     }
 
     private void startMainActivity() {

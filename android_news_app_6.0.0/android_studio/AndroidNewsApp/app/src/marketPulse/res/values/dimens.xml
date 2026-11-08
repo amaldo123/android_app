@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style 3: Sticker Brutal design dimensions -->
+    <dimen name="rounded_corner_radius">16dp</dimen>
+    <dimen name="btn_corner_radius">12dp</dimen>
+    <dimen name="native_ad_stroke_width">3dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+</resources>
+
