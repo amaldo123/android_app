@@ -3,10 +3,10 @@ package com.app.androidnewsapp.config;
 public class AppConfig {
 
     //your Server Key obtained from the admin panel
-    public static final String SERVER_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+    public static final String SERVER_KEY = "WVVoU01HTklUVFpNZVRsMVdsaGtlbU5JVm5Oak1sVjFXVEk1ZEV4dVVteFpNbWgxV2xoa2VscFlVWFZaTWpsMFRERTVhR05JUW5OaFYwNW9aRWRzZG1KcmJHdFlNazUyWWxNMU1GcFhUbTlpYlZZell6SldNRXh1VW14Wk1taDFXbGhrZWxsWVFuYz0=";
 
     //your Rest API Key obtained from the admin panel
-    public static final String REST_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    public static final String REST_API_KEY = "cda11rjSiTqokXZ8mQPe504JVIYdwKpfnEBzg7bGFlNu6AhHLW";
 
     //Google Ads Android IMA SDK
 	//Example VAST TAG URL: https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&correlator=

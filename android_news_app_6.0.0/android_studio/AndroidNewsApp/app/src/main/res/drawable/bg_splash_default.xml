@@ -4,8 +4,8 @@
         <shape android:shape="rectangle">
             <gradient
                 android:angle="270"
-                android:startColor="#2196F3"
-                android:endColor="#1E88E5" />
+                android:startColor="#635BFF"
+                android:endColor="#4F46E5" />
         </shape>
     </item>
     <item
@@ -14,4 +14,3 @@
         android:gravity="center"
         android:drawable="@drawable/ic_launcher_foreground" />
 </layer-list>
-

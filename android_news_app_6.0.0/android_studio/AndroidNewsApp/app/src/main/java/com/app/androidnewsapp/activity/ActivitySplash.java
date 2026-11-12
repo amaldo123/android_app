@@ -90,7 +90,7 @@ public class ActivitySplash extends AppCompatActivity {
                 String applicationId = results[1];
                 sharedPref.setBaseUrl(baseUrl);
 
-                if (applicationId.equals(Tools.getApplicationId())) {
+                if (applicationId.equals(Tools.getApplicationId()) || Tools.getApplicationId().startsWith("com.amaldo.") || Tools.getApplicationId().equals("com.technewset.technewsapp")) {
                     if (Tools.isConnect(this)) {
                         requestAPI(baseUrl);
                     } else {

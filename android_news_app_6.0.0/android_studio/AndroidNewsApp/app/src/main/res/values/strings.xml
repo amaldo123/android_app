@@ -2,7 +2,7 @@
 <resources>
 
     <!--app info-->
-    <string name="app_name">Android News App</string>
+    <string name="app_name">NewsPulse</string>
     <string name="copyright">Copyright © 2026 Solodroid Developer. \nAll right reserved</string>
     <string name="share_content">I Would like to share this with you. Here You Can Download This Application from PlayStore</string>
 

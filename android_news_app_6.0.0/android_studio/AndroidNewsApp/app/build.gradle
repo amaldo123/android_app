@@ -7,7 +7,7 @@ android {
     namespace = 'com.app.androidnewsapp'
     compileSdk = 37
     defaultConfig {
-        applicationId = "com.app.androidnewsapp"
+        applicationId = "com.technewset.technewsapp"
         minSdk = 24
         targetSdk = 37
         versionCode = 36
@@ -15,6 +15,12 @@ android {
     }
     flavorDimensions = ["app"]
     productFlavors {
+        newsPulse {
+            dimension = "app"
+            applicationId = "com.technewset.technewsapp"
+            versionCode = 1
+            versionName = "1.0.0"
+        }
         techRadar {
             dimension = "app"
             applicationId = "com.amaldo.techradar"

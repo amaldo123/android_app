@@ -3,11 +3,31 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    <!-- Squircle Background -->
     <path
-        android:fillColor="#2196F3"
-        android:pathData="M 32,24 L 76,24 C 80,24 84,28 84,32 L 84,76 C 84,80 80,84 76,84 L 32,84 C 28,84 24,80 24,76 L 24,32 C 24,28 28,24 32,24 Z" />
+        android:fillColor="#635BFF"
+        android:pathData="M 28,20 L 80,20 C 86,20 90,24 90,30 L 90,78 C 90,84 86,88 80,88 L 28,88 C 22,88 18,84 18,78 L 18,30 C 18,24 22,20 28,20 Z" />
+    <!-- News Document Outline -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M 36,36 L 72,36 L 72,42 L 36,42 Z M 36,48 L 56,48 L 56,72 L 36,72 Z M 60,48 L 72,48 L 72,54 L 60,54 Z M 60,58 L 72,58 L 72,64 L 60,64 Z M 60,68 L 72,68 L 72,72 L 60,72 Z" />
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeAlpha="0.9"
+        android:pathData="M 34,30 L 74,30 C 76,30 78,32 78,34 L 78,74 C 78,76 76,78 74,78 L 34,78 C 32,78 30,76 30,74 L 30,34 C 30,32 32,30 34,30 Z" />
+    <!-- Header line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M 37,38 L 56,38" />
+    <!-- Accent Cyan Indicator Dot -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M 69,38 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+    <!-- Pulse Waveform -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 32,54 L 40,54 L 46,45 L 53,62 L 60,48 L 65,54 L 76,54" />
 </vector>
-
