@@ -12,3 +12,4 @@ public class CallbackTutorialDetail {
     public Tutorial post = null;
 
 }
+

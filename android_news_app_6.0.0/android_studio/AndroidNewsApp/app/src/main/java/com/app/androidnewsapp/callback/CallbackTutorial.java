@@ -18,3 +18,4 @@ public class CallbackTutorial {
     public List<Tutorial> posts = new ArrayList<>();
 
 }
+
