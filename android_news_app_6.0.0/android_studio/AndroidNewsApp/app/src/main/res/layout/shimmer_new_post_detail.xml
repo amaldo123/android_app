@@ -3,64 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
     android:orientation="vertical"
-    android:paddingStart="@dimen/item_post_padding_medium"
-    android:paddingTop="@dimen/item_post_padding_medium"
-    android:paddingEnd="@dimen/item_post_padding_medium">
+    android:paddingStart="@dimen/spacing_large"
+    android:paddingTop="@dimen/spacing_large"
+    android:paddingEnd="@dimen/spacing_large">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/item_post_padding_medium">
+        android:layout_marginBottom="@dimen/spacing_large">
 
-        <RelativeLayout
+        <View
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@drawable/bg_shimmer_rounded"
             app:layout_constraintDimensionRatio="@string/post_large_dimension_ratio"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_shimmer_rounded" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="22dp"
         android:layout_marginTop="@dimen/spacing_xsmall"
-        android:background="@drawable/bg_shimmer_text"
-        android:padding="3dp" />
+        android:background="@drawable/bg_shimmer_text" />
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="22dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
-        android:background="@drawable/bg_shimmer_text"
-        android:padding="3dp" />
+        android:background="@drawable/bg_shimmer_text" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_xsmall">
+        android:layout_marginTop="@dimen/spacing_medium">
 
-        <TextView
+        <View
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="14dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+        <View
+            android:layout_width="90dp"
+            android:layout_height="14dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
     </RelativeLayout>
@@ -68,114 +59,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
         android:orientation="vertical">
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="@dimen/item_post_padding_medium"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/bg_shimmer_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_shimmer_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="110dp"
+            android:background="@drawable/bg_shimmer_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_shimmer_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bg_shimmer_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_shimmer_text" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginEnd="90dp"
             android:background="@drawable/bg_shimmer_text" />
 
     </LinearLayout>

@@ -1,33 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Squircle Background -->
+
+    <!-- Squircle container with vibrant electric blue -->
     <path
-        android:fillColor="#635BFF"
-        android:pathData="M 28,20 L 80,20 C 86,20 90,24 90,30 L 90,78 C 90,84 86,88 80,88 L 28,88 C 22,88 18,84 18,78 L 18,30 C 18,24 22,20 28,20 Z" />
-    <!-- News Document Outline -->
+        android:fillColor="#007AFF"
+        android:pathData="M 32,16 L 76,16 C 90,16 92,18 92,32 L 92,76 C 92,90 90,92 76,92 L 32,92 C 18,92 16,90 16,76 L 16,32 C 16,18 18,16 32,16 Z" />
+
+    <!-- Soft glow behind monogram -->
+    <path
+        android:fillColor="#22FFFFFF"
+        android:pathData="M 54,54 m -25,0 a 25,25 0 1,0 50,0 a 25,25 0 1,0 -50,0" />
+
+    <!-- Monogram N (Letterform) -->
     <path
         android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.5"
-        android:strokeAlpha="0.9"
-        android:pathData="M 34,30 L 74,30 C 76,30 78,32 78,34 L 78,74 C 78,76 76,78 74,78 L 34,78 C 32,78 30,76 30,74 L 30,34 C 30,32 32,30 34,30 Z" />
-    <!-- Header line -->
-    <path
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.5"
+        android:strokeWidth="5"
         android:strokeLineCap="round"
-        android:pathData="M 37,38 L 56,38" />
-    <!-- Accent Cyan Indicator Dot -->
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 36,36 L 36,66 L 56,36 L 56,66" />
+
+    <!-- Cyan Pulse Indicator Dot -->
     <path
-        android:fillColor="#06B6D4"
-        android:pathData="M 69,38 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
-    <!-- Pulse Waveform -->
+        android:fillColor="#00C7BE"
+        android:pathData="M 72,36 m -4.5,0 a 4.5,4.5 0 1,0 9,0 a 4.5,4.5 0 1,0 -9,0" />
+
+    <!-- Cyan Pulse Waveform below Monogram -->
     <path
-        android:strokeColor="#FFFFFF"
+        android:strokeColor="#00C7BE"
         android:strokeWidth="3.2"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
-        android:pathData="M 32,54 L 40,54 L 46,45 L 53,62 L 60,48 L 65,54 L 76,54" />
+        android:fillColor="#00000000"
+        android:pathData="M 24,75 L 34,75 L 40,68 L 47,82 L 53,70 L 59,75 L 68,70 L 74,79 L 78,75 L 84,75" />
+
 </vector>

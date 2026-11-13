@@ -15,8 +15,8 @@ public class Constant {
     public static final String YOUTUBE_IMG_BACK = "/mqdefault.jpg";
 
     public static final String EXTRA_OBJC = "key.EXTRA_OBJC";
-    public static final int PAGER_NUMBER_DEFAULT = 4;
-    public static final int PAGER_NUMBER_NO_VIDEO = 3;
+    public static final int PAGER_NUMBER_DEFAULT = 5;
+    public static final int PAGER_NUMBER_NO_VIDEO = 4;
 
     public static final String NATIVE_AD_STYLE_SMALL = "small";
     public static final String NATIVE_AD_STYLE_MEDIUM = "medium";

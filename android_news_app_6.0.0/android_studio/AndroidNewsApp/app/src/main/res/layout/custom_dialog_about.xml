@@ -1,36 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:paddingStart="24dp"
+    android:paddingTop="28dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="16dp">
 
-    <ImageView
+    <!-- App Logo with Circle Frame -->
+    <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:src="@mipmap/ic_launcher" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular"
+        app:strokeColor="#EEF2FF"
+        app:strokeWidth="3dp" />
 
+    <!-- App Name -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/custom_font"
         android:text="@string/app_name"
-        android:textSize="20sp"
+        android:textColor="#0F172A"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txt_app_version"
+    <!-- Version Badge -->
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_circle_indigo_light"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="4dp">
 
+        <TextView
+            android:id="@+id/txt_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/custom_font"
+            android:gravity="center"
+            android:textColor="#635BFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <!-- Subtitle / Tagline -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/custom_font"
         android:gravity="center"
-        android:text="@string/copyright" />
+        android:lineSpacingExtra="3dp"
+        android:text="Your trusted daily news source with modern, fast, and personalized reading experience."
+        android:textColor="#64748B"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="60dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="#E2E8F0" />
+
+    <!-- Copyright -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_font"
+        android:gravity="center"
+        android:text="@string/copyright"
+        android:textColor="#94A3B8"
+        android:textSize="12sp" />
 
 </LinearLayout>

@@ -160,11 +160,11 @@ public class MainActivity extends AppCompatActivity implements DefaultLifecycleO
             }
         }
 
-        navigation.setLabelVisibilityMode(BottomNavigationView.LABEL_VISIBILITY_LABELED);
+        navigation.setLabelVisibilityMode(BottomNavigationView.LABEL_VISIBILITY_UNLABELED);
         if (sharedPref.getIsDarkTheme()) {
-            navigation.setBackgroundColor(ContextCompat.getColor(this, R.color.color_dark_bottom_navigation));
+            navigation.setBackgroundResource(R.drawable.bg_floating_dock_dark);
         } else {
-            navigation.setBackgroundColor(ContextCompat.getColor(this, R.color.color_light_bottom_navigation));
+            navigation.setBackgroundResource(R.drawable.bg_floating_dock);
         }
 
         if (AppConfig.ENABLE_RTL_MODE) {
@@ -275,9 +275,10 @@ public class MainActivity extends AppCompatActivity implements DefaultLifecycleO
     public void setupToolbar() {
         if (sharedPref.getIsDarkTheme()) {
             toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.color_dark_toolbar));
-            navigation.setBackgroundColor(ContextCompat.getColor(this, R.color.color_dark_bottom_navigation));
+            navigation.setBackgroundResource(R.drawable.bg_floating_dock_dark);
         } else {
             toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.color_light_primary));
+            navigation.setBackgroundResource(R.drawable.bg_floating_dock);
         }
 
         btnSearch.setOnClickListener(view -> {
@@ -301,11 +302,11 @@ public class MainActivity extends AppCompatActivity implements DefaultLifecycleO
         if (sharedPref.getIsDarkTheme()) {
             lytSearchBar.setCardBackgroundColor(ContextCompat.getColor(this, R.color.color_dark_search_bar));
             btnSearch.setColorFilter(ContextCompat.getColor(this, R.color.color_dark_icon), PorterDuff.Mode.SRC_IN);
-            titleToolbar.setTextColor(ContextCompat.getColor(this, R.color.color_dark_icon));
+            titleToolbar.setTextColor(ContextCompat.getColor(this, R.color.color_grey_medium));
         } else {
             lytSearchBar.setCardBackgroundColor(ContextCompat.getColor(this, R.color.color_light_search_bar));
             btnSearch.setColorFilter(ContextCompat.getColor(this, R.color.color_light_icon), PorterDuff.Mode.SRC_IN);
-            titleToolbar.setTextColor(ContextCompat.getColor(this, R.color.color_light_text));
+            titleToolbar.setTextColor(ContextCompat.getColor(this, R.color.color_grey_medium));
         }
 
         searchBar.setOnClickListener(view -> {
@@ -318,17 +319,51 @@ public class MainActivity extends AppCompatActivity implements DefaultLifecycleO
             destroyBannerAd();
         });
 
-        titleToolbar.setText(getString(R.string.app_name));
+        titleToolbar.setText(getString(R.string.title_menu_search));
 
         btnProfile.setOnClickListener(view -> openSettings());
         btnSettings.setOnClickListener(view -> openSettings());
 
-        if (sharedPref.getLoginFeature().equals("yes")) {
-            btnProfile.setVisibility(View.VISIBLE);
-            btnSettings.setVisibility(View.GONE);
-        } else {
-            btnProfile.setVisibility(View.GONE);
-            btnSettings.setVisibility(View.VISIBLE);
+        btnProfile.setVisibility(View.VISIBLE);
+        btnSettings.setVisibility(View.VISIBLE);
+
+        View toggleTopStories = findViewById(R.id.toggle_top_stories);
+        View toggleShorts = findViewById(R.id.toggle_shorts);
+        if (toggleTopStories != null && toggleShorts != null) {
+            toggleTopStories.setOnClickListener(v -> {
+                if (AppConfig.ENABLE_RTL_MODE) {
+                    viewPagerRTL.setCurrentItem(0, true);
+                } else {
+                    viewPager.setCurrentItem(0, true);
+                }
+            });
+            toggleShorts.setOnClickListener(v -> {
+                int targetTab = sharedPref.getVideoMenu().equals("yes") ? 1 : 0;
+                if (AppConfig.ENABLE_RTL_MODE) {
+                    viewPagerRTL.setCurrentItem(targetTab, true);
+                } else {
+                    viewPager.setCurrentItem(targetTab, true);
+                }
+            });
+        }
+
+        View btnSparkle = findViewById(R.id.btn_sparkle);
+        if (btnSparkle != null) {
+            btnSparkle.setOnClickListener(v -> {
+                int tutorialTab = sharedPref.getVideoMenu().equals("yes") ? 2 : 1;
+                if (AppConfig.ENABLE_RTL_MODE) {
+                    viewPagerRTL.setCurrentItem(tutorialTab, true);
+                } else {
+                    viewPager.setCurrentItem(tutorialTab, true);
+                }
+            });
+        }
+
+        View btnMic = findViewById(R.id.btn_mic);
+        if (btnMic != null) {
+            btnMic.setOnClickListener(v -> {
+                startActivity(new Intent(getApplicationContext(), ActivitySearch.class));
+            });
         }
     }
 

@@ -63,11 +63,7 @@ public class ActivitySplash extends AppCompatActivity {
         adsManager = new AdsManager(this);
 
         imgSplash = findViewById(R.id.img_splash);
-        if (sharedPref.getIsDarkTheme()) {
-            imgSplash.setImageResource(R.drawable.bg_splash_dark);
-        } else {
-            imgSplash.setImageResource(R.drawable.bg_splash_default);
-        }
+        imgSplash.setImageResource(R.drawable.ic_launcher_foreground);
 
         Tools.postDelayed(this::requestConfig, AppConfig.DELAY_SPLASH_SCREEN);
 

@@ -1,45 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- BRAND PRIMARY (VIBRANT ELECTRIC BLUE FROM SCREENSHOT) -->
+    <color name="color_primary">#007AFF</color>
+    <color name="color_primary_dark">#0056B3</color>
+    <color name="color_primary_light">#38BDF8</color>
+    <color name="color_secondary">#007AFF</color>
+    <color name="color_accent">#00C7BE</color>
 
-    <!--default theme color (Modern SaaS Indigo & Cyan)-->
-    <color name="color_light_primary">#635BFF</color>
-    <color name="color_light_status_bar">#635BFF</color>
-    <color name="color_light_accent">#06B6D4</color>
+    <!-- STATUS & BADGES -->
+    <color name="color_success">#34C759</color>
+    <color name="color_warning">#FF9500</color>
+    <color name="color_danger">#FF3B30</color>
+    <color name="color_badge_live">#FF3B30</color>
+    <color name="color_info">#007AFF</color>
+
+    <!-- LIGHT THEME -->
+    <color name="color_light_primary">#007AFF</color>
+    <color name="color_light_status_bar">#F8FAFC</color>
+    <color name="color_light_accent">#00C7BE</color>
     <color name="color_light_background">#F8FAFC</color>
+    <color name="color_light_surface">#FFFFFF</color>
     <color name="color_light_bottom_navigation">#FFFFFF</color>
     <color name="color_light_icon">#64748B</color>
     <color name="color_light_text">#0F172A</color>
+    <color name="color_light_text_secondary">#64748B</color>
+    <color name="color_light_text_muted">#94A3B8</color>
     <color name="color_light_search_bar">#FFFFFF</color>
     <color name="color_light_native_ad_background">#FFFFFF</color>
-    <color name="color_light_active_indicator">#EEF2FF</color>
+    <color name="color_light_active_indicator">#EBF5FF</color>
+    <color name="color_light_border">#E2E8F0</color>
+    <color name="color_light_card">#FFFFFF</color>
+    <color name="color_light_divider">#F1F5F9</color>
 
-    <!--dark theme color (Modern SaaS Deep Slate)-->
+    <!-- DARK THEME -->
     <color name="color_dark_status_bar">#0B1120</color>
     <color name="color_dark_toolbar">#0F172A</color>
-    <color name="color_dark_accent">#635BFF</color>
+    <color name="color_dark_accent">#007AFF</color>
     <color name="color_dark_background">#0B1120</color>
-    <color name="color_dark_bottom_navigation">#0F172A</color>
+    <color name="color_dark_surface">#111827</color>
+    <color name="color_dark_bottom_navigation">#111827</color>
     <color name="color_dark_icon">#94A3B8</color>
     <color name="color_dark_text">#F8FAFC</color>
+    <color name="color_dark_text_secondary">#94A3B8</color>
+    <color name="color_dark_text_muted">#64748B</color>
     <color name="color_dark_search_bar">#1E293B</color>
     <color name="color_dark_native_ad_background">#1E293B</color>
-    <color name="color_dark_active_indicator">#1E1B4B</color>
+    <color name="color_dark_active_indicator">#1E293B</color>
+    <color name="color_dark_border">#263244</color>
+    <color name="color_dark_card">#111827</color>
+    <color name="color_dark_divider">#1E293B</color>
 
-    <!--others-->
+    <!-- SHARED TOKENS -->
     <color name="color_dialog_background_light">#FFFFFF</color>
     <color name="color_dialog_background_light_navigation_bar">#CBD5E1</color>
     <color name="color_dialog_background_dark">#1E293B</color>
     <color name="color_stroke_native_ad">#E2E8F0</color>
     <color name="color_shimmer">#E2E8F0</color>
+    <color name="color_shimmer_base">#EFF2F5</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
-    <color name="color_red">#F43F5E</color>
+    <color name="color_red">#FF3B30</color>
     <color name="color_grey_soft">#F1F5F9</color>
     <color name="color_grey_medium">#94A3B8</color>
     <color name="color_grey_dark">#64748B</color>
-    <color name="color_category">#635BFF</color>
-    <color name="color_ripple">#E0E7FF</color>
+    <color name="color_category">#007AFF</color>
+    <color name="color_ripple">#20007AFF</color>
+    <color name="color_ripple_dark">#201E293B</color>
     <color name="color_overlay_soft">#1A000000</color>
-    <color name="color_overlay_dark">#33000000</color>
-
+    <color name="color_overlay_dark">#55000000</color>
+    <color name="color_scrim">#80000000</color>
+    <color name="color_transparent">#00000000</color>
 </resources>

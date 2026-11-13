@@ -103,6 +103,8 @@ public class AdapterPost extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public LinearLayout lytDate;
         public LinearLayout lytComment;
         public ImageView btnOverflow;
+        public TextView badgeLive;
+        public View lytCarouselIndicator;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -118,6 +120,8 @@ public class AdapterPost extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             lytDate = v.findViewById(R.id.lyt_date);
             lytComment = v.findViewById(R.id.lyt_comment);
             btnOverflow = v.findViewById(R.id.btn_overflow);
+            badgeLive = v.findViewById(R.id.badge_live);
+            lytCarouselIndicator = v.findViewById(R.id.lyt_carousel_indicator);
         }
 
     }
@@ -236,6 +240,18 @@ public class AdapterPost extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 vItem.thumbnailVideo.setVisibility(View.GONE);
             } else {
                 vItem.thumbnailVideo.setVisibility(View.VISIBLE);
+            }
+
+            if (vItem.badgeLive != null) {
+                if (position == 0 || (title != null && title.toLowerCase().contains("live"))) {
+                    vItem.badgeLive.setVisibility(View.VISIBLE);
+                } else {
+                    vItem.badgeLive.setVisibility(View.GONE);
+                }
+            }
+
+            if (vItem.lytCarouselIndicator != null) {
+                vItem.lytCarouselIndicator.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
             }
 
             if (p.content_type != null && p.content_type.equals("youtube")) {

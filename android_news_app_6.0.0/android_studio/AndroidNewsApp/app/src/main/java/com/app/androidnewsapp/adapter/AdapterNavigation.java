@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.app.androidnewsapp.fragment.FragmentCategory;
 import com.app.androidnewsapp.fragment.FragmentFavorite;
 import com.app.androidnewsapp.fragment.FragmentPost;
+import com.app.androidnewsapp.fragment.FragmentTutorial;
 import com.app.androidnewsapp.fragment.FragmentVideo;
 
 @SuppressWarnings("deprecation")
@@ -31,6 +32,8 @@ public class AdapterNavigation {
                 return new FragmentCategory();
             } else if (position == 2) {
                 return new FragmentVideo();
+            } else if (position == 3) {
+                return new FragmentTutorial();
             } else {
                 return new FragmentFavorite();
             }
@@ -56,6 +59,8 @@ public class AdapterNavigation {
                 return new FragmentPost();
             } else if (position == 1) {
                 return new FragmentCategory();
+            } else if (position == 2) {
+                return new FragmentTutorial();
             } else {
                 return new FragmentFavorite();
             }
@@ -83,6 +88,8 @@ public class AdapterNavigation {
                 return new FragmentPost();
             } else if (position == 2) {
                 return new FragmentVideo();
+            } else if (position == 3) {
+                return new FragmentTutorial();
             } else {
                 return new FragmentFavorite();
             }
@@ -108,6 +115,8 @@ public class AdapterNavigation {
                 return new FragmentCategory();
             } else if (position == 1) {
                 return new FragmentPost();
+            } else if (position == 2) {
+                return new FragmentTutorial();
             } else {
                 return new FragmentFavorite();
             }

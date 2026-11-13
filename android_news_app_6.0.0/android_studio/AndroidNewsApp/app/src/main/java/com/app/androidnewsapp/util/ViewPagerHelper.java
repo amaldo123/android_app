@@ -59,7 +59,7 @@ public class ViewPagerHelper {
         }
     }
 
-    //posts as main page
+    // posts as main page
     public void setupViewPagerDefault(ViewPager viewPager, BottomNavigationView navigation, TextView title_toolbar) {
         viewPager.setVisibility(View.VISIBLE);
         viewPager.setAdapter(new AdapterNavigation.Default(activity.getSupportFragmentManager()));
@@ -75,8 +75,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_video) {
                 viewPager.setCurrentItem(2);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPager.setCurrentItem(3);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPager.setCurrentItem(4);
                 return true;
             }
             return false;
@@ -84,9 +87,7 @@ public class ViewPagerHelper {
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -105,14 +106,14 @@ public class ViewPagerHelper {
                 } else if (viewPager.getCurrentItem() == 2) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_video));
                 } else if (viewPager.getCurrentItem() == 3) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPager.getCurrentItem() == 4) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -128,8 +129,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_category) {
                 viewPager.setCurrentItem(1);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPager.setCurrentItem(2);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPager.setCurrentItem(3);
                 return true;
             }
             return false;
@@ -137,9 +141,7 @@ public class ViewPagerHelper {
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -156,14 +158,14 @@ public class ViewPagerHelper {
                 } else if (viewPager.getCurrentItem() == 1) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_category));
                 } else if (viewPager.getCurrentItem() == 2) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPager.getCurrentItem() == 3) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -182,8 +184,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_video) {
                 viewPagerRTL.setCurrentItem(2);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPagerRTL.setCurrentItem(3);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPagerRTL.setCurrentItem(4);
                 return true;
             }
             return false;
@@ -191,9 +196,7 @@ public class ViewPagerHelper {
 
         viewPagerRTL.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -212,14 +215,14 @@ public class ViewPagerHelper {
                 } else if (viewPagerRTL.getCurrentItem() == 2) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_video));
                 } else if (viewPagerRTL.getCurrentItem() == 3) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPagerRTL.getCurrentItem() == 4) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -235,8 +238,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_category) {
                 viewPagerRTL.setCurrentItem(1);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPagerRTL.setCurrentItem(2);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPagerRTL.setCurrentItem(3);
                 return true;
             }
             return false;
@@ -244,9 +250,7 @@ public class ViewPagerHelper {
 
         viewPagerRTL.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -263,18 +267,17 @@ public class ViewPagerHelper {
                 } else if (viewPagerRTL.getCurrentItem() == 1) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_category));
                 } else if (viewPagerRTL.getCurrentItem() == 2) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPagerRTL.getCurrentItem() == 3) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
-    //category as main page
     public void setupViewPagerCategory(ViewPager viewPager, BottomNavigationView navigation, TextView title_toolbar) {
         viewPager.setVisibility(View.VISIBLE);
         viewPager.setAdapter(new AdapterNavigation.Category(activity.getSupportFragmentManager()));
@@ -290,8 +293,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_video) {
                 viewPager.setCurrentItem(2);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPager.setCurrentItem(3);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPager.setCurrentItem(4);
                 return true;
             }
             return false;
@@ -299,9 +305,7 @@ public class ViewPagerHelper {
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -320,14 +324,14 @@ public class ViewPagerHelper {
                 } else if (viewPager.getCurrentItem() == 2) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_video));
                 } else if (viewPager.getCurrentItem() == 3) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPager.getCurrentItem() == 4) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -343,8 +347,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_recent) {
                 viewPager.setCurrentItem(1);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPager.setCurrentItem(2);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPager.setCurrentItem(3);
                 return true;
             }
             return false;
@@ -352,9 +359,7 @@ public class ViewPagerHelper {
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -371,14 +376,14 @@ public class ViewPagerHelper {
                 } else if (viewPager.getCurrentItem() == 1) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_recent));
                 } else if (viewPager.getCurrentItem() == 2) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPager.getCurrentItem() == 3) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -397,8 +402,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_video) {
                 viewPagerRTL.setCurrentItem(2);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPagerRTL.setCurrentItem(3);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPagerRTL.setCurrentItem(4);
                 return true;
             }
             return false;
@@ -406,9 +414,7 @@ public class ViewPagerHelper {
 
         viewPagerRTL.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -427,14 +433,14 @@ public class ViewPagerHelper {
                 } else if (viewPagerRTL.getCurrentItem() == 2) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_video));
                 } else if (viewPagerRTL.getCurrentItem() == 3) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPagerRTL.getCurrentItem() == 4) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 
@@ -450,8 +456,11 @@ public class ViewPagerHelper {
             } else if (itemId == R.id.navigation_recent) {
                 viewPagerRTL.setCurrentItem(1);
                 return true;
-            } else if (itemId == R.id.navigation_favorite) {
+            } else if (itemId == R.id.navigation_tutorial) {
                 viewPagerRTL.setCurrentItem(2);
+                return true;
+            } else if (itemId == R.id.navigation_favorite) {
+                viewPagerRTL.setCurrentItem(3);
                 return true;
             }
             return false;
@@ -459,9 +468,7 @@ public class ViewPagerHelper {
 
         viewPagerRTL.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -478,14 +485,14 @@ public class ViewPagerHelper {
                 } else if (viewPagerRTL.getCurrentItem() == 1) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_recent));
                 } else if (viewPagerRTL.getCurrentItem() == 2) {
+                    title_toolbar.setText(activity.getResources().getString(R.string.title_nav_tutorial));
+                } else if (viewPagerRTL.getCurrentItem() == 3) {
                     title_toolbar.setText(activity.getResources().getString(R.string.title_nav_favorite));
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
     }
 

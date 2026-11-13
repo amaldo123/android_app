@@ -4,13 +4,21 @@
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:stateListAnimator="@null"
+    app:backgroundTint="@android:color/transparent"
     app:elevation="0dp"
     app:liftOnScroll="false">
 
-    <include
-        layout="@layout/toolbar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:layout_scrollFlags="scroll|enterAlways" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextAppearance="@style/ToolbarFontStyle" />
 
 </com.google.android.material.appbar.AppBarLayout>

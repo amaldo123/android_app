@@ -18,8 +18,7 @@
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:id="@+id/coordinator_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/lyt_bottom">
+                android:layout_height="match_parent">
 
                 <ViewStub
                     android:id="@+id/header_view"
@@ -47,24 +46,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
                 android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@drawable/bg_shadow" />
 
                 <com.solodroidx.ads.ui.BannerAdView
                     android:id="@+id/bannerAdView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/navigation"
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="?android:attr/windowBackground"
-                    app:elevation="0dp" />
+                    android:paddingStart="24dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="24dp"
+                    android:paddingBottom="12dp">
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/navigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_floating_dock"
+                        app:elevation="8dp" />
+
+                </FrameLayout>
 
             </LinearLayout>
 

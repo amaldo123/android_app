@@ -10,53 +10,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <View
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@drawable/bg_shimmer_rounded"
             app:layout_constraintDimensionRatio="@string/post_large_dimension_ratio"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_shimmer_rounded" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginTop="@dimen/spacing_large"
-        android:background="@drawable/bg_shimmer_text"
-        android:padding="3dp" />
+        android:background="@drawable/bg_shimmer_text" />
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
-        android:background="@drawable/bg_shimmer_text"
-        android:padding="3dp" />
+        android:background="@drawable/bg_shimmer_text" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small">
 
-        <TextView
+        <View
             android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="14dp"
             android:background="@drawable/bg_shimmer_text" />
 
-        <TextView
+        <View
             android:layout_width="40dp"
-            android:layout_height="wrap_content"
+            android:layout_height="14dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
             android:background="@drawable/bg_shimmer_text" />
 
     </RelativeLayout>

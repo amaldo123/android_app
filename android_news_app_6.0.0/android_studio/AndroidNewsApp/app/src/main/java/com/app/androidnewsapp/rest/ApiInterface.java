@@ -9,6 +9,8 @@ import com.app.androidnewsapp.callback.CallbackLogin;
 import com.app.androidnewsapp.callback.CallbackPostDetail;
 import com.app.androidnewsapp.callback.CallbackRecent;
 import com.app.androidnewsapp.callback.CallbackSettings;
+import com.app.androidnewsapp.callback.CallbackTutorial;
+import com.app.androidnewsapp.callback.CallbackTutorialDetail;
 import com.app.androidnewsapp.callback.CallbackUser;
 import com.app.androidnewsapp.models.Report;
 import com.app.androidnewsapp.models.User;
@@ -48,6 +50,21 @@ public interface ApiInterface {
             @Query("api_key") String api_key,
             @Query("page") int page,
             @Query("count") int count
+    );
+
+    @Headers({CACHE, AGENT})
+    @GET("api.php?get_tutorials")
+    Call<CallbackTutorial> getTutorials(
+            @Query("api_key") String api_key,
+            @Query("page") int page,
+            @Query("count") int count
+    );
+
+    @Headers({CACHE, AGENT})
+    @GET("api.php?get_tutorial_detail")
+    Call<CallbackTutorialDetail> getTutorialDetail(
+            @Query("api_key") String api_key,
+            @Query("id") long id
     );
 
     @Headers({CACHE, AGENT})

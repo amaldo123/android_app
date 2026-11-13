@@ -10,6 +10,7 @@
     <string name="title_nav_recent">Recent</string>
     <string name="title_nav_category">Category</string>
     <string name="title_nav_video">Video</string>
+    <string name="title_nav_tutorial">Tutorial</string>
     <string name="title_nav_favorite">Favorite</string>
 
     <!-- toolbar and title-->

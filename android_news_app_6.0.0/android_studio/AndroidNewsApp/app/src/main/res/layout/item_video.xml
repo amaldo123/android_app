@@ -43,12 +43,11 @@
 
                     <ImageView
                         android:id="@+id/thumbnail_video"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:alpha="0.9"
-                        android:src="@drawable/ic_thumbnail_video"
+                        android:src="@drawable/ic_play_circle"
                         android:visibility="gone" />
 
                 </RelativeLayout>

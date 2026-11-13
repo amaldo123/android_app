@@ -18,113 +18,204 @@
         android:visibility="gone"
         app:layout_scrollFlags="scroll|enterAlways" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/lyt_search_bar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        app:cardCornerRadius="26dp"
-        app:cardElevation="0dp"
-        app:cardMaxElevation="0dp"
-        app:cardPreventCornerOverlap="false"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="6dp"
         app:layout_scrollFlags="scroll|enterAlways">
 
-        <LinearLayout
-            android:id="@+id/search_bar"
+        <!-- Top Header Row -->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:foreground="?selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/spacing_medium"
-            android:paddingEnd="@dimen/spacing_medium">
+            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/btn_search"
-                android:layout_width="@dimen/spacing_xxlarge"
-                android:layout_height="@dimen/spacing_xxlarge"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_menu_search"
-                app:tint="@color/color_light_icon" />
+            <!-- Profile Avatar (Left) -->
+            <RelativeLayout
+                android:id="@+id/btn_profile"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?selectableItemBackgroundBorderless">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/spacing_small"
-                android:paddingEnd="@dimen/spacing_small">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular" />
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_marginEnd="8dp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/ic_launcher_foreground" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular" />
 
-                <TextView
-                    android:id="@+id/title_toolbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/custom_font"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:text="@string/app_name"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-                    android:textColor="@color/color_light_text" />
+            </RelativeLayout>
 
-            </LinearLayout>
-
+            <!-- Center Heading & Segmented Pill Toggle -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_toStartOf="@+id/lyt_actions_right"
+                android:layout_toEndOf="@id/btn_profile"
+                android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/btn_profile"
-                    android:layout_width="@dimen/spacing_xxlarge"
-                    android:layout_height="@dimen/spacing_xxlarge"
-                    android:background="?selectableItemBackgroundBorderless">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/custom_font"
+                    android:text="Discover Latest News"
+                    android:textColor="@color/color_light_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_profile"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_centerInParent="true"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular" />
+                <!-- Segmented Toggle Pill [ Top Stories | Shorts ] -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bg_segmented_container"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_avatar"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_centerInParent="true"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular" />
+                    <TextView
+                        android:id="@+id/toggle_top_stories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_dock_item_active"
+                        android:gravity="center"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="Top Stories"
+                        android:textColor="@color/color_white"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
 
-                </RelativeLayout>
+                    <TextView
+                        android:id="@+id/toggle_shorts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="Shorts"
+                        android:textColor="@color/color_grey_medium"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/btn_settings"
-                    android:layout_width="@dimen/spacing_xxlarge"
-                    android:layout_height="@dimen/spacing_xxlarge"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:padding="4dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Circular" />
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <!-- Right Action Buttons -->
+            <LinearLayout
+                android:id="@+id/lyt_actions_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-    </androidx.cardview.widget.CardView>
+                <!-- AI Sparkle Pill -->
+                <ImageView
+                    android:id="@+id/btn_sparkle"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/bg_circle_indigo_light"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_sparkle" />
+
+                <!-- Settings / Notification Bell -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/btn_settings"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/bg_category_chip"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_settings_white"
+                    app:tint="@color/color_light_icon" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Search Bar Pill -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lyt_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="@color/color_light_search_bar"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageButton
+                    android:id="@+id/btn_search"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_menu_search"
+                    app:tint="@color/color_light_icon" />
+
+                <TextView
+                    android:id="@+id/title_toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/custom_font"
+                    android:maxLines="1"
+                    android:text="Search..."
+                    android:textColor="@color/color_grey_medium"
+                    android:textSize="13.5sp" />
+
+                <ImageView
+                    android:id="@+id/btn_mic"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_mic"
+                    app:tint="@color/color_grey_medium" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </com.google.android.material.appbar.AppBarLayout>

@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/item_post_padding_small"
-    app:cardBackgroundColor="@android:color/transparent"
-    app:cardCornerRadius="@dimen/rounded_corner_radius"
+    android:layout_margin="6dp"
+    app:cardBackgroundColor="@color/color_light_card"
+    app:cardCornerRadius="14dp"
     app:cardElevation="0dp"
     app:cardMaxElevation="0dp"
-    app:cardPreventCornerOverlap="false">
+    app:cardPreventCornerOverlap="true">
 
     <LinearLayout
         android:id="@+id/lyt_parent"
@@ -28,6 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
+                android:background="@color/color_shimmer"
                 android:src="@drawable/ic_thumbnail"
                 app:layout_constraintDimensionRatio="H,1:1"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -42,8 +43,10 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
 
             <TextView
                 android:id="@+id/name"
@@ -51,20 +54,25 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Category Name"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:fontFamily="@font/custom_font"
+                android:gravity="center"
+                android:text="Category"
+                android:textColor="@color/color_light_text"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/post_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/custom_font"
                 android:gravity="center"
-                android:text="10"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+                android:text="10 posts"
+                android:textColor="@color/color_grey_dark"
+                android:textSize="11sp" />
 
         </LinearLayout>
-
 
     </LinearLayout>
 

@@ -4,11 +4,14 @@
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/color_primary"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:backgroundTint="@color/color_primary"
     app:elevation="0dp"
     app:liftOnScroll="false">
 
     <include
+        android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
