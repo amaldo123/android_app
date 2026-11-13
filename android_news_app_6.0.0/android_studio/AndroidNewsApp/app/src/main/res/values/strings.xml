@@ -258,4 +258,7 @@
     <string name="exit_message">Do you want to exit the app?</string>
     <string name="press_again_to_exit">Press again to exit app</string>
     <string name="msg_invalid_url">Whoops! URL cannot be handled</string>
+    <string name="dialog_font_size">Select Font Size</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="btn_clear">Clear</string>
 </resources>
