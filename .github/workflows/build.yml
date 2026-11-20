@@ -43,20 +43,31 @@ jobs:
         working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
         run: gradle assembleDebug --no-daemon --stacktrace
 
-      - name: Build Release Bundle (.aab)
+      - name: Build Signed Release Bundles (.aab)
         working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
         run: gradle bundleRelease --no-daemon --stacktrace
+
+      - name: Build Signed Release APKs (.apk)
+        working-directory: android_news_app_6.0.0/android_studio/AndroidNewsApp
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: Upload Signed Release Bundles (.aab)
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: all-signed-release-bundles
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/bundle/**/*.aab
+
+      - name: Upload Signed Release APKs (.apk)
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: all-signed-release-apks
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/apk/**/*-release.apk
 
       - name: Upload Debug APKs
         uses: actions/upload-artifact@v4
         if: success()
         with:
           name: all-debug-apks
-          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/apk/**/*.apk
-
-      - name: Upload Release Bundles (.aab)
-        uses: actions/upload-artifact@v4
-        if: success()
-        with:
-          name: all-release-bundles
-          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/bundle/**/*.aab
+          path: android_news_app_6.0.0/android_studio/AndroidNewsApp/app/build/outputs/apk/**/*-debug.apk

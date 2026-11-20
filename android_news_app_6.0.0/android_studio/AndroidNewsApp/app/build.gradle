@@ -13,6 +13,46 @@ android {
         versionCode = 36
         versionName = "6.0.0"
     }
+
+    signingConfigs {
+        newsPulseConfig {
+            storeFile file("keystores/newspulse.jks")
+            storePassword "newspulse_release_2026"
+            keyAlias "newspulse"
+            keyPassword "newspulse_release_2026"
+        }
+        techRadarConfig {
+            storeFile file("keystores/techradar.jks")
+            storePassword "techradar_release_2026"
+            keyAlias "techradar"
+            keyPassword "techradar_release_2026"
+        }
+        sportsFlashConfig {
+            storeFile file("keystores/sportsflash.jks")
+            storePassword "sportsflash_release_2026"
+            keyAlias "sportsflash"
+            keyPassword "sportsflash_release_2026"
+        }
+        marketPulseConfig {
+            storeFile file("keystores/marketpulse.jks")
+            storePassword "marketpulse_release_2026"
+            keyAlias "marketpulse"
+            keyPassword "marketpulse_release_2026"
+        }
+        horizonTravelConfig {
+            storeFile file("keystores/horizontravel.jks")
+            storePassword "horizontravel_release_2026"
+            keyAlias "horizontravel"
+            keyPassword "horizontravel_release_2026"
+        }
+        dailyDigestConfig {
+            storeFile file("keystores/dailydigest.jks")
+            storePassword "dailydigest_release_2026"
+            keyAlias "dailydigest"
+            keyPassword "dailydigest_release_2026"
+        }
+    }
+
     flavorDimensions = ["app"]
     productFlavors {
         newsPulse {
@@ -20,36 +60,42 @@ android {
             applicationId = "com.technewset.technewsapp"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.newsPulseConfig
         }
         techRadar {
             dimension = "app"
             applicationId = "com.amaldo.techradar"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.techRadarConfig
         }
         sportsFlash {
             dimension = "app"
             applicationId = "com.amaldo.sportsflash"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.sportsFlashConfig
         }
         marketPulse {
             dimension = "app"
             applicationId = "com.amaldo.marketpulse"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.marketPulseConfig
         }
         horizonTravel {
             dimension = "app"
             applicationId = "com.amaldo.horizontravel"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.horizonTravelConfig
         }
         dailyDigest {
             dimension = "app"
             applicationId = "com.amaldo.dailydigest"
             versionCode = 1
             versionName = "1.0.0"
+            signingConfig signingConfigs.dailyDigestConfig
         }
     }
     buildTypes {
