@@ -10,8 +10,8 @@ android {
         applicationId = "com.technewset.technewsapp"
         minSdk = 24
         targetSdk = 37
-        versionCode = 3
-        versionName = "3.0.0"
+        versionCode = 4
+        versionName = "4.0.0"
     }
 
     signingConfigs {
@@ -58,43 +58,43 @@ android {
         newsPulse {
             dimension = "app"
             applicationId = "com.technewset.technewsapp"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.newsPulseConfig
         }
         techRadar {
             dimension = "app"
             applicationId = "com.amaldo.techradar"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.techRadarConfig
         }
         sportsFlash {
             dimension = "app"
             applicationId = "com.amaldo.sportsflash"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.sportsFlashConfig
         }
         marketPulse {
             dimension = "app"
             applicationId = "com.amaldo.marketpulse"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.marketPulseConfig
         }
         horizonTravel {
             dimension = "app"
             applicationId = "com.amaldo.horizontravel"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.horizonTravelConfig
         }
         dailyDigest {
             dimension = "app"
             applicationId = "com.amaldo.dailydigest"
-            versionCode = 3
-            versionName = "3.0.0"
+            versionCode = 4
+            versionName = "4.0.0"
             signingConfig signingConfigs.dailyDigestConfig
         }
     }
