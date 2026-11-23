@@ -83,6 +83,25 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:93558122405:android:b50427525e52dae4660333",
+        "android_client_info": {
+          "package_name": "com.amaldo.techflash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmQGxf1CWHhm7FriB1LQBDGX9kJkFDv3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:93558122405:android:b50427525e52dae4660334",
         "android_client_info": {
           "package_name": "com.amaldo.marketpulse"

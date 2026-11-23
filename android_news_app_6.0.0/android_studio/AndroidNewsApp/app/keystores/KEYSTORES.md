@@ -34,7 +34,25 @@ All keystores are generated with industry-standard specifications:
 
 ---
 
-### 2. ⚽ SportsFlash
+### 2. ⚡ TechFlash (Replaced SportsFlash)
+- **App Flavor:** `techFlash`
+- **Application ID (Package Name):** `com.amaldo.techflash`
+- **Keystore File:** `techflash.jks`
+- **Alias:** `techflash`
+- **Store Password:** `techflash_release_2026`
+- **Key Password:** `techflash_release_2026`
+- **SHA-1 Fingerprint:**
+  ```text
+  AA:44:55:B4:74:D5:8E:74:40:27:6E:F1:F3:8D:C1:14:56:1E:63:77
+  ```
+- **SHA-256 Fingerprint:**
+  ```text
+  37:A0:7E:DE:2B:97:31:33:49:1F:2B:43:35:0A:70:1B:0E:46:AF:37:B8:41:24:A8:98:77:C4:B4:D7:0A:34:9D
+  ```
+
+---
+
+### 2b. ⚽ SportsFlash (Legacy)
 - **App Flavor:** `sportsFlash`
 - **Application ID (Package Name):** `com.amaldo.sportsflash`
 - **Keystore File:** `sportsflash.jks`

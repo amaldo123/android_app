@@ -33,6 +33,12 @@ android {
             keyAlias "sportsflash"
             keyPassword "sportsflash_release_2026"
         }
+        techFlashConfig {
+            storeFile file("keystores/techflash.jks")
+            storePassword "techflash_release_2026"
+            keyAlias "techflash"
+            keyPassword "techflash_release_2026"
+        }
         marketPulseConfig {
             storeFile file("keystores/marketpulse.jks")
             storePassword "marketpulse_release_2026"
@@ -69,12 +75,12 @@ android {
             versionName = "3.0.1"
             signingConfig signingConfigs.techRadarConfig
         }
-        sportsFlash {
+        techFlash {
             dimension = "app"
-            applicationId = "com.amaldo.sportsflash"
+            applicationId = "com.amaldo.techflash"
             versionCode = 5
             versionName = "3.0.1"
-            signingConfig signingConfigs.sportsFlashConfig
+            signingConfig signingConfigs.techFlashConfig
         }
         marketPulse {
             dimension = "app"
